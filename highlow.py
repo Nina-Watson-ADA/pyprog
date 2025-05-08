@@ -4,18 +4,16 @@ def high_low():
     rand = random.randint(1,100)
     playing = True
     while playing:
-        guess = int(input("guess a number! "))
-        if guess == rand:
-            print("congrats")
-            playing = False
-            break
-        print("LOWER" if guess > rand else "HIGHER")
-        '''
-        elif guess > rand:
-            print("LOWER") 
-        else:
-            print("HIGHER")
-        '''
+        try:
+            guess = int(input("guess a number! "))
+            if guess == rand:
+                print("congrats")
+                playing = False
+            else:
+                print("LOWER" if guess > rand else "HIGHER")
+        except Exception as e:
+            print(f"Operation failed: {e}")
+
 
 
 play = "y"
